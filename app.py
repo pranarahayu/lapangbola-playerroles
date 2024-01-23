@@ -8,3 +8,7 @@ import urllib
 st.set_page_config(page_title='Lapangbola - Player Roles', layout='wide')
 st.header('Lapangbola - Player Roles')
 st.markdown('Created by: Prana - R&D Division Lapangbola.com')
+
+col1, col2, col3 = st.columns(3)
+with col1:
+    p_filter = st.selectbox('Select Player', ['Ilija Spasojevic', 'David da Silva'])
