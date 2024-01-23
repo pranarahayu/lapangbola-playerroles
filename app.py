@@ -17,3 +17,6 @@ with col2:
 with col3:
     r_filter = st.selectbox('Select Role', ['Ball Playing Defender', 'Advanced Forward'])
     role_search = st.checkbox('Search Player by Roles')
+
+if role_search:
+    st.write('Role Search test')
