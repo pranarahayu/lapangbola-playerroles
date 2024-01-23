@@ -11,4 +11,6 @@ st.markdown('Created by: Prana - R&D Division Lapangbola.com')
 
 col1, col2, col3 = st.columns(3)
 with col1:
+    r_filter = st.selectbox('Select Position', ['Center Back', 'Forward'])
+with col2:
     p_filter = st.selectbox('Select Player', ['Ilija Spasojevic', 'David da Silva'])
