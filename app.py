@@ -12,11 +12,11 @@ st.markdown('Created by: Prana - R&D Division Lapangbola.com')
 col1, col2, col3 = st.columns(3)
 with col1:
     s_filter = st.selectbox('Select Position', ['Center Back', 'Forward'])
+    role_search = st.checkbox('Search Player by Roles')
 with col2:
     p_filter = st.selectbox('Select Player', ['Ilija Spasojevic', 'David da Silva'])
 with col3:
     r_filter = st.selectbox('Select Role', ['Ball Playing Defender', 'Advanced Forward'])
-    role_search = st.checkbox('Search Player by Roles')
 
 if role_search:
     st.write('Role Search test')
