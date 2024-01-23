@@ -20,3 +20,5 @@ with col3:
 
 if role_search:
     st.write('Role Search test')
+else:
+    st.write('Player Search test')
