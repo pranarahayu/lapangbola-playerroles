@@ -16,3 +16,4 @@ with col2:
     p_filter = st.selectbox('Select Player', ['Ilija Spasojevic', 'David da Silva'])
 with col3:
     r_filter = st.selectbox('Select Role', ['Ball Playing Defender', 'Advanced Forward'])
+    role_search = st.checkbox('Search Player by Roles')
