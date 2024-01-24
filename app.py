@@ -23,3 +23,10 @@ if role_search:
 else:
     st.write('Player Search test')
 
+# Initialize connection.
+conn = st.connection("postgresql", type="sql")
+
+# Perform query.
+df = conn.query('SELECT * FROM playerdb;', ttl="10m")
+st.write(df)
+
