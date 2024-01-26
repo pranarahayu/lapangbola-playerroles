@@ -15,7 +15,7 @@ def load_data(sheets_url):
     return pd.read_excel(xlsx_url)
 
 df = load_data(st.secrets["roles"])
-roles = load_data(st.secrets["rlz"])
+rlz = load_data(st.secrets["rlz"])
 
 col1, col2, col3 = st.columns(3)
 with col1:
