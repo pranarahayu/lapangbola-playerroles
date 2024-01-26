@@ -9,16 +9,24 @@ st.set_page_config(page_title='Lapangbola - Player Roles', layout='wide')
 st.header('Lapangbola - Player Roles')
 st.markdown('Created by: Prana - R&D Division Lapangbola.com')
 
+df = load_data(st.secrets["roles"])
+roles = load_data(st.secrets["rlz"])
+
 col1, col2, col3 = st.columns(3)
 with col1:
-    s_filter = st.selectbox('Select Position', ['Center Back', 'Forward'])
+    s_filter = st.selectbox('Select Position', ['Center Back', 'Fullback', 'Midfielder',
+                                                'Attacking 10', 'Winger', 'Forward'])
     role_search = st.checkbox('Search Player by Roles')
 with col2:
     p_filter = st.selectbox('Select Player', ['Ilija Spasojevic', 'David da Silva'])
 with col3:
-    r_filter = st.selectbox('Select Role', ['Ball Playing Defender', 'Advanced Forward'])
+    r = rlz[rlz['Position']==s_filter].reset_index(drop=True)
+    r_filter = st.selectbox('Select Role', pd.unique(r['Roles']))
 
 if role_search:
-    st.write('Role Search test')
+    fls = df[['Name', 'Minutes Played', r_filter]]
+    fls[r_filter] = rouind(fls[r_filter], 2)
+    fls = fls[fls[r_filter].notna()].sort_values(by=r_filter, ascending=False).reset_index(drop=True)
+    st.write(fls)
 else:
     st.write('Player Search test')
