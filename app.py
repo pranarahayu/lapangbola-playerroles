@@ -30,7 +30,7 @@ with col3:
 
 if role_search:
     fls = df[['Name', 'Minutes Played', r_filter]]
-    fls[r_filter] = rouind(fls[r_filter], 2)
+    fls[r_filter] = round(fls[r_filter], 2)
     fls = fls[fls[r_filter].notna()].sort_values(by=r_filter, ascending=False).reset_index(drop=True)
     st.write(fls)
 else:
